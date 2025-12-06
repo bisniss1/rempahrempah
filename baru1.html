@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELFOOD - Minuman Rempah Alami</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<style>/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #EAF5E5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header/Hero Section */
+.hero-section {
+    position: relative;
+    text-align: center;
+    padding-bottom: 20px;
+    background: linear-gradient(to top, #f8c983, #8cb369);
+    border-bottom-left-radius: 50% 10%;
+    border-bottom-right-radius: 50% 10%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-content h1 {
+    font-size: 3em;
+    color: #4a6d36; 
+    margin-bottom: -10px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px #fff;
+}
+
+.header-content h2 {
+    font-size: 1.5em;
+    color: #f7a31b;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Gaya untuk gambar produk di Hero Section */
+.main-product-image {
+    width: 90%; 
+    max-width: 500px; 
+    height: auto; 
+    display: block; 
+    margin: 20px auto 0 auto; 
+    border-radius: 10px; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.halal-logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #4a6d36;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Konten Utama */
+.content-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Bagian Varian */
+.variants-section {
+    background-color: #FFA500; 
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.section-title {
+    text-align: center;
+    color: #4a6d36; 
+    font-size: 2em;
+    margin: 30px 0 20px;
+    position: relative;
+}
+
+.variants-section .section-title {
+    color: #fff; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); 
+    margin-top: 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.variant-item {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #d39f00;
+}
+
+.variant-name {
+    font-size: 1.25em;
+    color: #c98800;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.variant-benefit {
+    font-size: 0.9em;
+    color: #333;
+}
+
+.note {
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    color: #fff; 
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    padding-bottom: 0px;
+}
+
+/* --- Gaya Formulir Pemesanan --- */
+.order-form-section {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #d39f00; 
+}
+
+.order-form-section .section-title {
+    color: #f7a31b; 
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #4a6d36; 
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #f7a31b; 
+    outline: none;
+}
+
+.form-group small {
+    font-size: 0.8em;
+    color: #888;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.submit-button {
+    background-color: #f7a31b; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #d38d0e; 
+}
+
+.form-note {
+    text-align: center;
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 10px;
+}
+/* --- Akhir Gaya Formulir Pemesanan --- */
+
+
+/* Footer CTA */
+.footer-cta {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    border-top: 2px dashed #ccc;
+    background-color: #e6e6e0;
+}
+
+.cta-box p {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #4a6d36;
+}
+
+.social-handle {
+    font-size: 1.5em;
+    color: #555;
+    margin-top: 5px;
+}
+
+.phone-number {
+    display: block;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #f7a31b;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+/* Responsif Dasar */
+@media (max-width: 600px) {
+    .hero-section {
+        border-bottom-left-radius: 30% 5%;
+        border-bottom-right-radius: 30% 5%;
+    }
+    .header-content h1 {
+        font-size: 2.5em;
+    }
+    .header-content h2 {
+        font-size: 1.2em;
+    }
+    .footer-cta {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .main-product-image {
+        width: 100%; 
+        margin-top: 15px;
+    }
+}</style>
+<body>
+    <header class="hero-section">
+        <div class="header-content">
+            <h1>ELFOOD</h1>
+            <h2>Minuman Rempah Alami</h2>
+            
+            <img src="www.jpg" alt="ELFOOD Minuman Rempah Alami" class="main-product-image">
+            <div class="halal-logo">
+                <p>HALAL INDONESIA</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-container">
+        <section class="variants-section">
+            <h3 class="section-title">Varian dan Khasiatnya 🌿</h3>
+            
+            <div class="product-grid">
+                <div class="variant-item">
+                    <h4 class="variant-name">Kunir Asem</h4>
+                    <p class="variant-benefit">meredakan nyeri haid, menurunkan berat badan, meningkatkan daya tahan tubuh, melancarkan BAB dll</p>
+                </div>
+
+                <div class="variant-item">
+                    <h4 class="variant-name">Beras Kencur</h4>
+                    <p class="variant-benefit">menyembuhkan sariawan, menambah nafsu makan, mencegah stress, menyehatkan kulit, dll</p>
+                </div>
+                
+                <div class="variant-item">
+                    <h4 class="variant-name">Temulawak</h4>
+                    <p class="variant-benefit">meningkatkan fungsi pencernaan, pengeluaran toksin/antikanker, membantu mengatasi mual, dll.</p>
+                </div>
+                
+                <div class="variant-item">
+                    <h4 class="variant-name">Varian Ultimate</h4>
+                    <p class="variant-benefit">Mengatasi Problem pencernaan, Reproduksi (kista, Miom, Promil, Haid yang bermasalah dll)</p>
+                </div>
+                
+                <div class="variant-item">
+                    <h4 class="variant-name">Sirih</h4>
+                    <p class="variant-benefit">mengatasi keputihan, meredakan sakit gigi, mengobati luka, sebagai antiseptik alami, dll</p>
+                </div>
+                
+                <div class="variant-item">
+                    <h4 class="variant-name">Kunir & Madu</h4>
+                    <p class="variant-benefit">mengatasi asam lambung, menjaga daya ingat, menurunkan kolesterol, meredakan peradangan, meredakan batuk. dll</p>
+                </div>
+
+                <div class="variant-item">
+                    <h4 class="variant-name">Rempah Rempah</h4>
+                    <p class="variant-benefit">mengatasi virus/gegal-segal, keccapean dan badan meriang</p>
+                </div>
+
+                <div class="variant-item">
+                    <h4 class="variant-name">Kunir Kurma</h4>
+                    <p class="variant-benefit">memperbaiki sistem pencernaan, promil, dll.</p>
+                </div>
+            </div>
+            
+            <p class="note">NB : Varian bisa bertambah sesuai dengan yang di keluhkan.</p>
+        </section>
+        
+        <hr>
+
+        <section class="order-form-section">
+            <h3 class="section-title">Formulir Pemesanan ✨</h3>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat">Alamat (beserta Nama Kost/Patokan):</label>
+                    <textarea id="alamat" name="alamat" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="sharelock" name="kirim_sharelock" value="Ya">
+                    <label for="sharelock">Bersedia Kirim Sharelock Alamat</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="no_wa">Nomor WhatsApp (Aktif):</label>
+                    <input type="tel" id="no_wa" name="no_wa" pattern="[0-9]{8,15}" required>
+                    <small>Contoh: 081234567890</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="varian">Pilih Varian:</label>
+                    <textarea id="varian" name="varian" rows="4" required></textarea>
+                    <small>Contoh: Kunir Asem (2 botol)</small>
+                </div>
+
+                <button type="submit" class="submit-button">Pesan Sekarang via WA</button>
+                <p class="form-note">*Formulir akan membuka aplikasi WhatsApp untuk mengirimkan detail pesanan Anda.</p>
+            </form>
+        </section>
+        <hr>
+        
+        <section class="footer-cta">
+            <div class="cta-box reseller-box">
+                <p>Open Reseller</p>
+                <a href="https://www.instagram.com/rempah.elfood" target="_blank" class="social-handle">
+                    <span>📸</span> @rempah.elfood
+                </a>
+            </div>
+
+            <div class="cta-box contact-box">
+                <p>Hubungi Kami</p>
+                <a 
+                    href="https://wa.me/6285777206416?text=Halo%20Elfood,%20saya%20tertarik%20dengan%20produk%20rempah%20alami%20Anda." 
+                    class="phone-number" 
+                    target="_blank"
+                >
+                    085777206416
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+    // 1. GANTI DENGAN NOMOR WHATSAPP ELFOOD ANDA (Format: 628xxxxxxx)
+    const whatsappNumber = '6285777206416'; // Nomor Elfood
+
+    const form = document.getElementById('orderForm');
+
+    form.addEventListener('submit', function(e) {
+        // Mencegah halaman reload
+        e.preventDefault();
+
+        // 2. Ambil nilai dari input formulir
+        const nama = document.getElementById('nama').value.trim();
+        const alamat = document.getElementById('alamat').value.trim();
+        const noWa = document.getElementById('no_wa').value.trim();
+        const varian = document.getElementById('varian').value.trim();
+        
+        // Cek status checkbox
+        const sharelockCheckbox = document.getElementById('sharelock');
+        const kirimSharelock = sharelockCheckbox.checked ? 'Ya, Bersedia Kirim Sharelock' : 'Tidak Perlu Sharelock';
+
+        // 3. Lakukan Validasi dasar
+        if (!nama || !alamat || !noWa || !varian) {
+            alert('Mohon lengkapi semua kolom yang wajib diisi.');
+            return;
+        }
+
+        // 4. Susun Pesan WhatsApp
+        const message = 
+            `*ORDER BARU ELFOOD*% \n\n` +
+            `==========================\n` +
+            `Nama Pemesan: ${nama}\n` +
+            `Nomor WA: ${noWa}\n` +
+            `Alamat Lengkap:\n${alamat}\n\n` +
+            `Permintaan Sharelock: ${kirimSharelock}\n` +
+            `==========================\n` +
+            `*DETAIL PESANAN:*\n` +
+            `${varian}\n\n` +
+            `Mohon segera diproses. Terima kasih!`;
+
+        // 5. Encode pesan dan buat link WhatsApp
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+        // 6. Buka tab baru dengan link WhatsApp
+        window.open(whatsappURL, '_blank');
+        
+        // Opsional: Reset form setelah data dikirimkan
+        form.reset();
+    });
+});</script>
+</body>
+</html>
